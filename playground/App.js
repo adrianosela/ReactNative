@@ -3,8 +3,9 @@
  */
 
 import React, { Component, PropTypes } from 'react';
-import { Dimensions, PanResponder, View } from 'react-native';
+import { Dimensions, PanResponder, View, ScrollView } from 'react-native';
 import MatrixMath from 'react-native/Libraries/Utilities/MatrixMath';
+import PinchZoomView from 'react-native-pinch-zoom-view'
 
 // rotateXY rotates the cube on the xy plane
 const rotateXY = (dx, dy) => {
@@ -73,7 +74,7 @@ const styles = {
   }
 };
 
-export default class Qube extends Component {
+export default class Cube extends Component {
   componentWillMount() {
     this.panResponder = PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
